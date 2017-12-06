@@ -10,7 +10,7 @@ public class Point {
     private int x;
     private int y;
 
-    public  Point(int x, int y) {
+    private  Point(int x, int y) {
         this.x = x;
         this.y = y;
     }
@@ -20,20 +20,9 @@ public class Point {
      * @param that that is second Point.
      */
     public double distanceTo(Point that) {
-        // Точка А - это текущая точка. К ней мы обращаемся через оператор this.
-        Point a = this;
-        // Точка В - это входящая точка. К ней мы можем обратиться напрямую через имя переменной that.
-        // или для удоства мы создали новую переменню b и к ней присвоили переменную this.
-        Point b = that;
-
-        int x1 = a.x;
-        int y1 = a.y;
-        int x2 = b.x;
-        int y2 = b.y;
-        double result = Math.sqrt(
-                Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2)
+        return Math.sqrt(
+                Math.pow(that.x - this.x, 2) + Math.pow(that.y - this.y, 2)
         );
-        return result;
     }
 
     public static void main(String[] args) {
