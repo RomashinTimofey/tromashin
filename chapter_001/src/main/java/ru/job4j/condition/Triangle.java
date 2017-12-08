@@ -79,6 +79,6 @@ public class Triangle {
      * @return exist
      */
     private boolean exist(double ab, double ac, double bc) {
-        return !(ab == 0) || !(ac == 0) || !(bc == 0) || ab + ac > bc || bc + ab > ac || ac + bc > ab;
+        return ab + ac > bc && bc + ab > ac && ac + bc > ab;
     }
 }
