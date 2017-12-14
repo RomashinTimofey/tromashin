@@ -10,7 +10,7 @@ public class MatrixTest {
     public void whenSize2ThenhMultiplieTable2v2() {
         Matrix matrix = new Matrix();
         int[][] rsl = matrix.multiple(2);
-        int[][] excepted = {{0,0}, {0, 1}};
+        int[][] excepted = {{4,6}, {6, 9}};
         assertThat(rsl, is(excepted));
     }
 
@@ -18,8 +18,8 @@ public class MatrixTest {
     public void when3x3then9() {
         Matrix matrix = new Matrix();
         int[][] rsl = matrix.multiple(4);
-        int result = rsl[3][3];
-        assertThat(rsl, is(result));
+        int result = rsl[0][0];
+        assertThat(result, is(4));
     }
 
 }
