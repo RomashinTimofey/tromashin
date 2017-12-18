@@ -1,6 +1,6 @@
 package ru.job4j.array;
 
-import java.util.ArrayList;
+import java.util.Arrays;
 
 /**
  * Class for delete duplicate in array
@@ -16,12 +16,16 @@ public class ArrayDuplicate {
      * @return cleaned array
      */
     public String[] remove(String[] array) {
-        ArrayList<String> arrayList = new ArrayList<>();
-        for(String item:array) {
-            if( !(arrayList.contains(item)) ) {
-                    arrayList.add(item);
+        int copy = 0;
+        for (int outside = 0; outside<array.length; outside++) {
+            for(int inside = outside+1; inside<array.length-copy; inside++) {
+                if(array[outside].equals(array[inside])) {
+                    array[inside] = array[array.length-copy-1];
+                    inside--; // for repeat check after replace
+                    copy++;
                 }
+            }
         }
-        return arrayList.toArray(new String[0]);
+        return Arrays.copyOf(array, array.length-copy);
     }
 }
