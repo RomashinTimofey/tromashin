@@ -21,19 +21,16 @@ public class WordInsideAnotherWord {
         char[] arraySub = sub.toCharArray();
 
         for(int outside = 0; outside < arrayOrigin.length - arraySub.length +1; outside++) {
-            if(arrayOrigin[outside] == arraySub[0]) {
-                int check = 1;
-                for(int inside = 1; inside < arraySub.length; inside++) {
-                    if (!(arrayOrigin[outside + inside] == arraySub[inside])) {
-                        break;
-                    } else check++;
-                    if (check == arraySub.length) {
-                        containsWord = true;
-                        break;
-                    }
-                }
+            int check = 0;
+            for(int inside = 0; inside < arraySub.length; inside++) {
+                if (!(arrayOrigin[outside + inside] == arraySub[inside])) {
+                    break;
+                } else check++;
             }
-            if(containsWord) break;
+            if (check == arraySub.length) {
+                containsWord = true;
+                break;
+            }
         }
         return containsWord;
     }
