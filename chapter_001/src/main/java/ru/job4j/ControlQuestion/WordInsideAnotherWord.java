@@ -23,9 +23,9 @@ public class WordInsideAnotherWord {
         for(int outside = 0; outside < arrayOrigin.length - arraySub.length +1; outside++) {
             int check = 0;
             for(int inside = 0; inside < arraySub.length; inside++) {
-                if (!(arrayOrigin[outside + inside] == arraySub[inside])) {
+                if (arrayOrigin[outside + inside] != arraySub[inside]) {
                     break;
-                } else check++;
+                } check++;
             }
             if (check == arraySub.length) {
                 containsWord = true;
