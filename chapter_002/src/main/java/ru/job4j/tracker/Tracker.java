@@ -18,10 +18,9 @@ public class Tracker {
      *
      * @param item новая заявка
      */
-    public Item add(Item item) {
+    public void add(Item item) {
         item.setId(this.generateId());
         this.items[this.position++] = item;
-        return item;
     }
 
     /**
@@ -32,8 +31,9 @@ public class Tracker {
      */
     public void replace(String id, Item item) {
         for (int index = 0; index < items.length; index++) {
-            if (items[index].getId().equals(id)) {
+            if (items[index] != null && items[index].getId().equals(id)) {
                 items[index] = item;
+
             }
         }
     }
@@ -54,8 +54,8 @@ public class Tracker {
             }
         }
         Item[] copy = new Item[items.length];
-        System.arraycopy(items, 0, items, 0 , positionOfitems);
-        System.arraycopy(items, positionOfitems+1, copy, positionOfitems, items.length-positionOfitems-1);
+        System.arraycopy(items, 0, items, 0, positionOfitems);
+        System.arraycopy(items, positionOfitems + 1, copy, positionOfitems, items.length - positionOfitems - 1);
         items = copy;
     }
 
@@ -81,15 +81,15 @@ public class Tracker {
     public Item[] findByName(String key) {
         int position = 0;
         int counter = 0;
-        for (int index = 0 ; index < items.length; index++) {
-            if (items[index].getName().equals(key)) {
+        for (Item item1 : items) {
+            if (item1 != null && item1.getName().equals(key)) {
                 counter++;
             }
         }
-        Item[] resultItems = new Item[100];
-        for (int index = 0 ; index < items.length; index++) {
-            if (items[index].getName().equals(key)) {
-               resultItems[position++] = items[index];
+        Item[] resultItems = new Item[counter];
+        for (Item item : items) {
+            if (item != null && item.getName().equals(key)) {
+                resultItems[position++] = item;
             }
         }
         return resultItems;
@@ -106,7 +106,7 @@ public class Tracker {
     public Item findById(String id) {
         Item result = new Item();
         for (Item item : items) {
-            if (item.getId().equals(id)) {
+            if (item != null && item.getId().equals(id)) {
                 result = item;
                 break;
             }
@@ -122,6 +122,10 @@ public class Tracker {
      */
     private String generateId() {
         return String.valueOf(System.currentTimeMillis() + RN.nextInt());
+    }
+
+    public Item[] getItems() {
+        return items;
     }
 }
 
