@@ -1,15 +1,16 @@
-package ru.job4j.ControlTest;
+package ru.job4j.controltest;
 
-/**     * Class for Unite 2 sorted array
-        * @author Timofey Romashin
-        * @version $Id$
-        * @since 0.1
+/**
+ * Class for Unite 2 sorted array
+ *
+ * @author Timofey Romashin
+ * @version $Id$
+ * @since 0.1
  */
 
 public class UnitedSortedArray {
     /**
-     *
-     * @param firstArray is first
+     * @param firstArray  is first
      * @param secondArray is second
      * @return unitedArray
      */
@@ -18,7 +19,7 @@ public class UnitedSortedArray {
         int first = 0;
         int second = 0;
 
-        for(int united = 0; united<unitedArray.length; united++) {
+        for (int united = 0; united < unitedArray.length; united++) {
             if (firstArray[first] < secondArray[second] && first < firstArray.length) {
                 unitedArray[united] = firstArray[first];
                 first++;
@@ -28,13 +29,13 @@ public class UnitedSortedArray {
             }
             // Проверка на выход за предел массива, если они не равны по кол-ву элементов.
             if (first >= firstArray.length) {
-                for (; second<secondArray.length; second++) {
+                for (; second < secondArray.length; second++) {
                     united++;
                     unitedArray[united] = secondArray[second];
                 }
             }
             if (second >= secondArray.length) {
-                for (; first<firstArray.length; first++) {
+                for (; first < firstArray.length; first++) {
                     united++;
                     unitedArray[united] = firstArray[first];
                 }

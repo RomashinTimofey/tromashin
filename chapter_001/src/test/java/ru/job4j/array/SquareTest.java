@@ -1,6 +1,7 @@
 package ru.job4j.array;
 
 import org.junit.Test;
+
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
 
@@ -17,7 +18,7 @@ public class SquareTest {
         Square square = new Square();
         int bound = 3;
         int[] squareNumber = square.calculate(bound);
-        int rsl = squareNumber[bound-1];
+        int rsl = squareNumber[bound - 1];
         assertThat(rsl, is(9));
     }
 
@@ -30,7 +31,7 @@ public class SquareTest {
         Square square = new Square();
         int bound = 13;
         int[] squareNumber = square.calculate(bound);
-        int rsl = squareNumber[bound-1];
+        int rsl = squareNumber[bound - 1];
         assertThat(rsl, is(169));
     }
 }

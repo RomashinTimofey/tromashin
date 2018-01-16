@@ -3,8 +3,8 @@ package ru.job4j.professions;
 public class Doctor extends Profession {
     private boolean hasScalpel;
 
-    public Doctor(String _name, String _position, boolean _healthy, boolean _compliance, boolean _trained, boolean hasScalpel) {
-        super(_name, _position, _healthy, _compliance, _trained);
+    public Doctor(String name, String position, boolean healthy, boolean compliance, boolean trained, boolean hasScalpel) {
+        super(name, position, healthy, compliance, trained);
         this.hasScalpel = hasScalpel;
     }
 

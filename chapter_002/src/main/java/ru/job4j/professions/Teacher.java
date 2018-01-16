@@ -3,8 +3,8 @@ package ru.job4j.professions;
 public class Teacher extends Profession {
     private boolean hasPointer;
 
-    public Teacher(String _name, String _position, boolean _healthy, boolean _compliance, boolean _trained, boolean hasPointer) {
-        super(_name, _position, _healthy, _compliance, _trained);
+    public Teacher(String name, String position, boolean healthy, boolean compliance, boolean trained, boolean hasPointer) {
+        super(name, position, healthy, compliance, trained);
         this.hasPointer = hasPointer;
     }
 

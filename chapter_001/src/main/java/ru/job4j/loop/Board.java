@@ -3,6 +3,7 @@ package ru.job4j.loop;
 
 /**
  * Class for paint Chess Board
+ *
  * @author Timofey Romashin
  * @version $Id$
  * @since 0.1
@@ -10,8 +11,7 @@ package ru.job4j.loop;
 public class Board {
 
     /**
-     *
-     * @param width of ChessBoard
+     * @param width  of ChessBoard
      * @param height of ChessBoard
      * @return painted ChessBoard
      */

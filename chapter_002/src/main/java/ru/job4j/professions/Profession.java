@@ -7,12 +7,12 @@ public class Profession {
     private boolean compliance;
     private boolean trained;
 
-    public Profession(String _name, String _position, boolean _healthy, boolean _compliance, boolean _trained) {
-        this.name = _name;
-        this.position = _position;
-        this.healthy = _healthy;
-        this.compliance = _compliance;
-        this.trained = _trained;
+    public Profession(String name, String position, boolean healthy, boolean compliance, boolean trained) {
+        this.name = name;
+        this.position = position;
+        this.healthy = healthy;
+        this.compliance = compliance;
+        this.trained = trained;
     }
 
     public Profession() {

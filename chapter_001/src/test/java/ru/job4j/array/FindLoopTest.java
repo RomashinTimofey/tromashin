@@ -2,6 +2,7 @@ package ru.job4j.array;
 
 
 import org.junit.Test;
+
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
 
@@ -13,9 +14,9 @@ public class FindLoopTest {
      */
     @Test
     public void whenEl4getIndex2() {
-        int[] data = {0,1,4,3,2,5};
-        FindLoop FL = new FindLoop();
-        int rsl = FL.indexOf(data, 4);
+        int[] data = {0, 1, 4, 3, 2, 5};
+        FindLoop fl = new FindLoop();
+        int rsl = fl.indexOf(data, 4);
         assertThat(rsl, is(2));
     }
 
@@ -24,9 +25,9 @@ public class FindLoopTest {
      */
     @Test
     public void whenEl13getMinus1() {
-        int[] data = {0,1,2,3,4,5};
-        FindLoop FL = new FindLoop();
-        int rsl = FL.indexOf(data, 13);
+        int[] data = {0, 1, 2, 3, 4, 5};
+        FindLoop fl = new FindLoop();
+        int rsl = fl.indexOf(data, 13);
         assertThat(rsl, is(-1));
     }
 }

@@ -2,6 +2,7 @@ package ru.job4j.condition;
 
 /**
  * * @author Timofey Romashin
+ *
  * @version $Id$
  * @since 0.1
  * Class for calculate S(A,B) of system coordinat
@@ -10,13 +11,14 @@ public class Point {
     private int x;
     private int y;
 
-    public  Point(int x, int y) {
+    public Point(int x, int y) {
         this.x = x;
         this.y = y;
     }
 
     /**
      * method for calculate S(A,B) with points
+     *
      * @param that that is second Point.
      */
     public double distanceTo(Point that) {
