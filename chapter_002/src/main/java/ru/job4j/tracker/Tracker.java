@@ -33,6 +33,7 @@ public class Tracker {
     public void replace(String id, Item item) {
         for (int index = 0; index < items.length; index++) {
             if (items[index] != null && items[index].getId().equals(id)) {
+                item.setId(items[index].getId());
                 items[index] = item;
 
             }
@@ -49,8 +50,9 @@ public class Tracker {
     public void delete(String id) {
         int positionOfitems = 0;
         for (int index = 0; index < items.length; index++) {
-            if (items[index].getId().equals(id)) {
+            if (items[index] != null && items[index].getId().equals(id)) {
                 positionOfitems = index;
+                position--;
                 break;
             }
         }
@@ -67,7 +69,11 @@ public class Tracker {
      */
     public Item[] findAll() {
         Item[] copyitems = new Item[position];
-        System.arraycopy(items, 0, copyitems, 0, position);
+        if (copyitems.length > 0) {
+            System.arraycopy(items, 0, copyitems, 0, position);
+        } else {
+            System.out.println("------------ Заявок нет! --------------");
+        }
         return copyitems;
     }
 
